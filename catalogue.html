@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Catalogue</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Music Catalogue Logo" class="logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="catalogue.html">Catalogue</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="add-song">
+      <h2>Add a New Song</h2>
+      <form id="song-form">
+        <label for="song-title">Song Title:</label>
+        <input type="text" id="song-title" required>
+        <label for="artist">Artist:</label>
+        <input type="text" id="artist" required>
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" required>
+        <button type="submit">Add Song</button>
+      </form>
+    </section>
+
+    <section id="catalogue">
+      <h2>Song Catalogue</h2>
+      <ul id="song-list"></ul>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 Favorite Songs Catalogue. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js', { scope: '/' });
+    }
+  </script>
+
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAuGfvB8VzamzWT89NHOazdcyJwWCXKc6U",
+    authDomain: "catalogue-for-music.firebaseapp.com",
+    projectId: "catalogue-for-music",
+    storageBucket: "catalogue-for-music.firebasestorage.app",
+    messagingSenderId: "793831053274",
+    appId: "1:793831053274:web:2cee483f788159758692e3",
+    measurementId: "G-JWZJKNPGB7"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1c1e21;
+  color: #e4e6eb;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #4CAF50;
+  padding: 15px;
+  text-align: center;
+  color: white;
+}
+
+header .logo {
+  width: 50px;
+  vertical-align: middle;
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero-section, .about-section {
+  text-align: center;
+  padding: 50px;
+}
+
+.hero-section {
+  background-color: #333;
+  color: #ffffff;
+  padding: 80px 20px;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: #45a049;
+}
+
+section h2 {
+  margin-bottom: 20px;
+}
+
+form label, form input, button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#song-list {
+  list-style-type: none;
+}
+
+#song-list li {
+  background-color: #fafafa;
+  color: #333;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #ffffff;
+  margin-top: 20px;
+}
