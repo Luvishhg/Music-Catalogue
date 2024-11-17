@@ -70,6 +70,32 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+
+
+  // Firestore: Add Item Function
+  async function addItemToDatabase(itemName){
+  try{
+    const docRef = await addDoc(collection(db, "items"), {
+      name: itemName,
+      createdAt: new Date().toISOString()
+    });
+    console.log("Document written witn ID: ", docRef.id)
+  } catch(e){
+    console.error("error adding document: ", e);
+  }
+  }
+
+
+  //Handle the form submission for adding an item to the Firestore collection
+  document.getElementByID("addItemForm").addEventListener("submit", function(event){
+    event.preventDefault();
+    const itemName = document.getElementById("itemName").value;
+    addItemToDatabase(itemName);
+
+  });
+
+    
+    
   </script>
 
 </body>
