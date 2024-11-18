@@ -32,8 +32,8 @@
     </section>
 
     <section id="catalogue">
-      <h2>Song Catalogue</h2>
-      <ul id="song-list"></ul>
+      <h2 id="song-list">Song Catalogue</h2>
+        <ul id="song-item"></ul>
     </section>
   </main>
   
@@ -88,6 +88,25 @@
   }
   }
 
+  // Firestore: show items in catalogue
+  async function displaySongs(Collection){
+    const songlist = document.getElementById("song-list");
+    const songlist.innerHTML = "";
+    
+    try{
+        const querySnapshot = await getDocs(collection(db, Collection));
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          const songItem = document.createElement("ul");
+          songItem.innerHTML = `Song Title: ${data.Song_Title}, Artist: ${data.Artist}, Genre: ${data.Genre}`
+          songlist.appendChild(songItem);
+    });
+    console.log("Shown songs")
+  } catch(e){
+    console.error("error shown songs: ", e);
+  }
+  }
+
 
   //Handle the form submission for adding an item to the Firestore collection
   document.getElementById("submit").addEventListener("click", function(event){
@@ -97,11 +116,12 @@
     const Song_Title = document.getElementById("Song_Title").value;
     addItemToDatabase(Artist, Genre, Song_Title, "Music");
     console.log("Added");
+    displaySongs("Music");
 
   });
 
     
-    
+  displaySong("Music");    
   </script>
 
 </body>
