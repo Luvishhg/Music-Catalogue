@@ -27,7 +27,7 @@
         <input type="text" id="artist" required>
         <label for="genre">Genre:</label>
         <input type="text" id="genre" required>
-        <button type="submit">Add Song</button>
+        <button type="submit" id="submit">Add Song</button>
       </form>
     </section>
 
@@ -73,10 +73,12 @@
 
 
   // Firestore: Add Item Function
-  async function addItemToDatabase(itemName){
+  async function addItemToDatabase(Artist, Genre, SongTitle, Collection){
   try{
-    const docRef = await addDoc(collection(db, "items"), {
-      name: itemName,
+    const docRef = await addDoc(collection(db, Collection), {
+      Artist: Artist,
+      Genre: Genre,
+      Song_Title: Song_Title,
       createdAt: new Date().toISOString()
     });
     console.log("Document written witn ID: ", docRef.id)
@@ -87,10 +89,12 @@
 
 
   //Handle the form submission for adding an item to the Firestore collection
-  document.getElementByID("addItemForm").addEventListener("submit", function(event){
+  document.getElementByID("submit").addEventListener("click", function(event){
     event.preventDefault();
-    const itemName = document.getElementById("itemName").value;
-    addItemToDatabase(itemName);
+    const Artist = document.getElementById("Artist").value;
+    const Genre = document.getElementById("Genre").value;
+    const SongTitle = document.getElementById("Song_Title").value;
+    addItemToDatabase(Arist, Genre, SongTitle, "Music");
 
   });
 
