@@ -74,7 +74,7 @@
 
 
   // Firestore: Add Item Function
-  async function addItemToDatabase(Artist, Genre, SongTitle, Collection){
+  async function addItemToDatabase(Artist, Genre, Song_Title, Collection){
   try{
     const docRef = await addDoc(collection(db, Collection), {
       Artist: Artist,
@@ -94,8 +94,8 @@
     event.preventDefault();
     const Artist = document.getElementById("Artist").value;
     const Genre = document.getElementById("Genre").value;
-    const SongTitle = document.getElementById("Song_Title").value;
-    addItemToDatabase(Artist, Genre, SongTitle, "Music");
+    const Song_Title = document.getElementById("Song_Title").value;
+    addItemToDatabase(Artist, Genre, Song_Title, "Music");
     console.log("Added");
 
   });
