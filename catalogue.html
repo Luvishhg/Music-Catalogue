@@ -91,7 +91,7 @@
   // Firestore: show items in catalogue
   async function displaySongs(Collection){
     const songlist = document.getElementById("song-list");
-    const songlist.innerHTML = "";
+    songlist.innerHTML = "";
     
     try{
         const querySnapshot = await getDocs(collection(db, Collection));
