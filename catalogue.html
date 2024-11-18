@@ -89,12 +89,13 @@
 
 
   //Handle the form submission for adding an item to the Firestore collection
-  document.getElementByID("submit").addEventListener("click", function(event){
+  document.getElementById("submit").addEventListener("click", function(event){
     event.preventDefault();
     const Artist = document.getElementById("Artist").value;
     const Genre = document.getElementById("Genre").value;
     const SongTitle = document.getElementById("Song_Title").value;
     addItemToDatabase(Arist, Genre, SongTitle, "Music");
+    console.log("Added");
 
   });
 
