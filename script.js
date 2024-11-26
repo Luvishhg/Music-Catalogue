@@ -1,9 +1,9 @@
 document.getElementById('song-form').addEventListener('submit', function(event) {
     event.preventDefault();
   
-    const title = document.getElementById('song-title').value;
-    const artist = document.getElementById('artist').value;
-    const genre = document.getElementById('genre').value;
+    const title = document.getElementById('Song_Title').value;
+    const artist = document.getElementById('Artist').value;
+    const genre = document.getElementById('Genre').value;
   
     addSongToCatalogue(title, artist, genre);
   
